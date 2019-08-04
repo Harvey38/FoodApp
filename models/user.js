@@ -54,6 +54,7 @@ var userschema = new mongoose.Schema( {
     email:{
         type:String,
         trim:true,
+        unique:true,
         validate(val){
             if(!validator.isEmail(val)){
                 throw new Error("Please enter a valid email");
@@ -93,8 +94,7 @@ var userschema = new mongoose.Schema( {
 userschema.pre('save', async function (next) {
     var pass = await bcrypt.hash(this.password, 8);
     this.password = pass;
-    var pass2 = await bcrypt.hash(this.confirmpassword,8);
-    this.confirmpassword = pass2;
+    this.confirmpassword = undefined;
     next();
 });
 const User = mongoose.model('user',userschema);
