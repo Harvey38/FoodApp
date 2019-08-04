@@ -1,8 +1,14 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
-const Plan = mongoose.model('Plan', {
+
+let planschema=new mongoose.Schema({
     ratingsAverage:{
         type:Number,
+        validate(val){
+            if(val>this.totalRating){
+                throw new Error("Average rating cannot be greater than total rating")
+            }
+        }
     },
     totalRating:{
         type:Number,
@@ -11,11 +17,21 @@ const Plan = mongoose.model('Plan', {
     type:{
         type:String,
         trim:true,
-        required:true
+        required:true,
+        validate(val){
+            if(!validator.isAlpha(val)){
+                throw new Error("The type must be a string")
+            }
+        }
     },
     name: {
         type: String,
-        required:true
+        required:true,
+        validate(val) {
+            if (!validator.isAlpha(val)) {
+                throw new Error("The name must be a string")
+            }
+        }
     },
     duration:{
         type:Number
@@ -26,7 +42,8 @@ const Plan = mongoose.model('Plan', {
     },
     description: {
         type: String,
-        required:true
+        required:true,
     },
 });
+const Plan = mongoose.model('Plan',planschema);
 module.exports=Plan;

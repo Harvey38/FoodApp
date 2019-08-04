@@ -15,3 +15,7 @@ app.get('*', (req, res) => {
     res.end();
 })
 module.exports = app;
+// const bcrypt= require('bcrypt');
+// bcrypt.hash('Ronaldo07',8).then((pass)=>{
+//     console.log(pass);
+// })

@@ -1,2 +1,2 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://127.0.0.1:27017/expressdatabase', { useNewUrlParser: true, useCreateIndex: true });
+mongoose.connect('mongodb+srv://tush38:Ronaldo07@cluster0-kfde1.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true, useCreateIndex: true });
