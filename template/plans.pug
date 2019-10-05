@@ -1,0 +1,25 @@
+block content
+  section.signup
+    h2 START EATING HEALTHY TODAY
+    .signup-parent
+      for plan in plans
+        .signup-child
+          .signup-header
+            h3=plan.name
+            .signup-pricing
+              span= `${plan.price}/month`
+              p= `That's only ${plan.cpm}$ per meal`
+          .signup-features
+            ul
+            -var obj = plan.desc
+            -for(var key in obj){
+              -if(typeof obj[key]==='string'){
+              li
+                i.fas.fa-check-circle  
+                |#{obj[key]}
+                -}
+            -}
+        
+            .signup-button
+              a.btn.btn-full(href='#') I&apos;m hungry
+              

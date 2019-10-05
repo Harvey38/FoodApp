@@ -1,0 +1,185 @@
+extends base
+block content
+  header
+    
+    .showcase
+      .header-text-box
+        h1
+          | GOODBYE JUNK FOOD.
+          br
+          | HELLO SUPER HEALTHY MEALS
+      a.btn.btn-full(href='#') I&apos;m hungry
+      a.btn.btn-empty(href='#') Show more
+  section.features
+    .features-heading
+      h2 GET FOOD FAST &mdash; NOT FAST FOOD
+    .features-info
+      p
+        | Hello, we&rsquo;re Omnifood, your new premium food delivery service. We know you&rsquo;re always busy. No time for cooking.
+        | So let us take care of that, we&rsquo;re really good at it, we promise!
+    .features-parent
+      .feature-article
+        i.far.fa-calendar-plus.icon
+        h3
+          | UP TO 365 DAYS/YEAR
+        p
+          | Never cook again! We really mean that. Our subscription plans include up to 365 days/year coverage. You can
+          | also
+          | choose to order more flexibly if that&apos;s your style.
+      .feature-article
+        i.fas.fa-shipping-fast.icon
+        h3 READY IN 20 MINUTES
+        p
+          | You&apos;re only twenty minutes away from your delicious and super healthy meals delivered right to your home. We
+          | work
+          | with the best chefs in each town to ensure that you&apos;re 100% happy.
+      .feature-article
+        i.fas.fa-carrot.icon
+        h3
+          | 100% ORGANIC
+        p
+          | All our vegetables are fresh, organic and local. Animals are raised without added hormones or antibiotics.
+          | Good
+          | for your health, the environment, and it also tastes better!
+      .feature-article
+        i.fas.fa-boxes.icon
+        h3
+          | ORDER ANYTHING
+        p
+          | We don&apos;t limit your creativity, which means you can order whatever you feel like. You can also choose from
+          | our
+          | menu containing over 100 delicious meals. It&apos;s up to you
+  section.steps
+    h2  HOW IT WORKS &mdash; SIMPLE AS 1, 2, 3
+    .steps-parent
+      .steps-iphone
+        img.steps-img(src='./img/iphone.png' alt='iphone-img')
+      .steps-how-to
+        .steps-list
+          div 1
+          p
+            | Choose the subscription plan that best fits your needs and sign up today.
+        .steps-list
+          div 2
+          p
+            | Order your delicious meal using our mobile app or website. Or you can even call us!
+        .steps-list
+          div 3
+          p
+            | Enjoy your meal after less than 20 minutes. See you the next time!
+        .app-img
+          a
+            img.store(src='./img/download-app-android.png' alt='')
+          a
+            img.store(src='./img/download-app.svg' alt='')
+  section#cities.city
+    h2 WE&apos;RE CURRENTLY IN THESE CITIES
+    .cities-parent
+      .cities-child
+        .cities-main
+          img(src='./img/Lisbon.jpg' alt='lisbon image')
+          h3 LISBON
+        .cities-link
+          i.fas.fa-user
+          div 1600+happy eaters
+        .cities-link
+          i.fas.fa-chess-queen
+          div 60+ top chefs
+        .cities-link
+          i.fab.fa-twitter
+          a(href='#') @omnifood_lx
+      .cities-child
+        .cities-main
+          img(src='./img/san.jpg' alt='lisbon image')
+          h3 SAN FRANSISICO
+        .cities-link
+          i.fas.fa-user
+          div 3700+happy eaters
+        .cities-link
+          i.fas.fa-chess-queen
+          div 160+ top chefs
+        .cities-link
+          i.fab.fa-twitter
+          a(href='#') @omnifood_sf
+      .cities-child
+        .cities-main
+          img(src='./img/berlin.jpg' alt='lisbon image')
+          h3 BERLIN
+        .cities-link
+          i.fas.fa-user
+          div 1600+happy eaters
+        .cities-link
+          i.fas.fa-chess-queen
+          div 110+ top chefs
+        .cities-link
+          i.fab.fa-twitter
+          a(href='#') @omnifood_bln
+      .cities-child
+        .cities-main
+          img(src='./img/london.jpg' alt='lisbon image')
+          h3 LONDON
+        .cities-link
+          i.fas.fa-user
+          div 1100+happy eaters
+        .cities-link
+          i.fas.fa-chess-queen
+          div 50+ top chefs
+        .cities-link
+          i.fab.fa-twitter
+          a(href='#') @omnifood_lndn
+  section.review
+    h2 OUR CUSTOMERS CAN&apos;T LIVE WITHOUT US
+    .review-parent
+      .review-child
+        blockquote
+          | Omnifood is just awesome! I just launched a startup which leaves me with no time for cooking, so Omnifood is a
+          | life-saver. Now that I got used to it, I couldn&apos;t live without my daily meals!
+        cite
+          img(src='./img/customer-1.jpg' alt='someone was here')
+          |           Alberto Duncan
+      .review-child
+        blockquote
+          | Omnifood is just awesome! I just launched a startup which leaves me with no time for cooking, so Omnifood is a
+          | life-saver. Now that I got used to it, I couldn&apos;t live without my daily meals!
+        cite
+          img(src='./img/customer-1.jpg' alt='someone was here')
+          |           Alberto Duncan
+      .review-child
+        blockquote
+          | Omnifood is just awesome! I just launched a startup which leaves me with no time for cooking, so Omnifood is a
+          | life-saver. Now that I got used to it, I couldn&apos;t live without my daily meals!
+        cite
+          img(src='./img/customer-1.jpg' alt='someone was here')
+          |           Alberto Duncan
+  include plans
+  section.Input.fadeInUp
+    h2 WE&apos;RE HAPPY TO HEAR FROM YOU
+    form
+      .entry
+        .entry-text
+          | Name
+        input(type='text' name='Name' placeholder='Your Name' required='')
+      .entry
+        .entry-text
+          | Email
+        input(type='email' name='email' placeholder='Your Email')
+      .entry
+        .entry-text
+          | How did you find us
+        select(name='' id='')
+          option(value='')
+            | friends
+          option(value='') search
+          option(value='') advertsiment
+          option(value='') other
+      .entry
+        .entry-text
+          | Newsletter ?
+        input.checkbox(type='checkbox' name='email')
+        | Yes, please
+      .entry
+        .entry-text
+          | Drop us a line
+        textarea(name='' id='' cols='30' rows='10' placeholder='Your Message')
+      .btn-parent
+        a.btn.btn-full.form-button(href='#') I&apos;m hungry

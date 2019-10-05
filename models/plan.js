@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
-
 let planschema=new mongoose.Schema({
     ratingsAverage:{
         type:Number,
@@ -10,19 +9,23 @@ let planschema=new mongoose.Schema({
             }
         }
     },
+    desc:{
+        d1: {
+            type: String
+        },
+        d2: {
+            type: String
+        },
+        d3: {
+            type: String
+        },
+        d4: {
+            type: String
+        }
+    },
     totalRating:{
         type:Number,
         required:true
-    },
-    type:{
-        type:String,
-        trim:true,
-        required:true,
-        validate(val){
-            if(!validator.isAlpha(val)){
-                throw new Error("The type must be a string")
-            }
-        }
     },
     name: {
         type: String,
@@ -44,6 +47,9 @@ let planschema=new mongoose.Schema({
         type: String,
         required:true,
     },
+    cpm:{
+        type:Number
+    }
 });
 const Plan = mongoose.model('Plan',planschema);
 module.exports=Plan;
